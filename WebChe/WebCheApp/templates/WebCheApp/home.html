@@ -19,4 +19,102 @@
                           background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))"></div>
 
 </div>
+
+
+<!--Texto de Biografia del Che-->
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center;margin-top: 55px;">
+       <h1 style="color: white; width: 80%;font-weight: bold;font-size:40px;">Quien es Ernesto Guevara de la Serna?</h1>
+       <p style="margin-top: 40px; color: white; width: 80%;">
+              Conocido como el Che Guevara o simplemente el Che, fue un médico, político, guerrillero, escritor, periodista y revolucionario comunista argentino nacionalizado cubano en 1960, ciudadanía a la que renunció en 1965.
+       
+              Fue uno de los ideólogos y comandantes de la Revolución cubana. Desde el alzamiento armado hasta 1965, Guevara participó activamente en la organización del Estado cubano. Desempeñó varios altos cargos de su administración y de su Gobierno, sobre todo en el área económica. Fue presidente del Banco Nacional, director del Departamento de Industrialización del Instituto Nacional de Reforma Agraria (INRA) y ministro de Industria. En el área diplomática, actuó como responsable de varias misiones internacionales.
+              
+              Abogado de la expansión de la lucha armada en regiones del tercer mundo, el Che Guevara impulsó la instalación de «focos» guerrilleros en varios países de América Latina. Entre 1965 y 1967, él mismo combatió en el Congo y en Bolivia. En este último país, fue capturado y posteriormente ejecutado por el Ejército de Bolivia, con informes que indican la colaboración de la CIA, el 9 de octubre de 1967.
+              
+              Su figura, reconocida mundialmente, genera diversas reacciones en la opinión pública, tanto positivas como negativas. Para muchos de sus partidarios representa la lucha contra las injusticias sociales, mientras que sus detractores lo consideran un personaje autoritario y violento.
+              
+              Su retrato fotográfico, obra de Alberto Korda, es una de las imágenes más reproducidas e icónicas del mundo, comercial y no comercialmente, tanto en su original como en variantes que reproducen el contorno de su rostro.
+       </p>
+       
+</div>
+
+<!--Carrusel de Fotos-->
+
+<div class="carrusel">
+       <div id="carouselExampleAutoplaying"
+            class="carousel slide"
+            data-bs-ride="carousel">
+         <div class="carousel-inner">
+           {% for movie in movie_recommendations %}
+             {% if forloop.first %}
+               <div class="carousel-item active">
+                 <img src="{{ movie.image.url }}"
+                      class="d-block w-100"
+                      alt="No Image"
+                      style="width: 500px;
+                             height: 400px;
+                             position: relative;
+                             object-fit: cover">
+                 <div class="gradient-overlay"
+                      style="position: absolute;
+                             top: 0;
+                             left: 0;
+                             width: 100%;
+                             height: 100%;
+                             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))"></div>
+                 <div class="carousel-caption d-none d-md-block" style="width: 800px;">
+                   <h2 style="color: #fff;
+                              font-weight:bold;
+                              font-size:2.0em;
+                              margin-bottom:0.4em;
+                              text-align: left"
+                              >Title: {{ movie.name }}</h2>
+                   <p style="color: #fff;margin-bottom:2.4em;text-align: left">{{ movie.synopsis }}</p>
+                 </div>
+               </div>
+             {% else %}
+               <div class="carousel-item">
+                 <img src="{{ movie.image.url }}"
+                      class="d-block w-100"
+                      alt="No Image"
+                      style="width: 500px;
+                             height: 400px;
+                             position: relative;
+                             object-fit: cover">
+                 <div class="gradient-overlay"
+                      style="position: absolute;
+                             top: 0;
+                             left: 0;
+                             width: 100%;
+                             height: 100%;
+                             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))"></div>
+                 <div class="carousel-caption d-none d-md-block" style="width: 800px;">
+                   <h2 style="color: #fff;
+                              font-weight:bold;
+                              font-size:2.0em;
+                              margin-bottom:0.4em;
+                              text-align: left;">Title: {{ movie.name }}</h2>
+                   <p style="color: #fff;margin-bottom:2.4em;text-align: left;">{{ movie.synopsis }}</p>
+                 </div>
+               </div>
+             {% endif %}
+           {% endfor %}
+         </div>
+         <button class="carousel-control-prev"
+                 type="button"
+                 data-bs-target="#carouselExampleAutoplaying"
+                 data-bs-slide="prev">
+           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+           <span class="visually-hidden">Previous</span>
+         </button>
+         <button class="carousel-control-next"
+                 type="button"
+                 data-bs-target="#carouselExampleAutoplaying"
+                 data-bs-slide="next">
+           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+           <span class="visually-hidden">Next</span>
+         </button>
+       </div>
+</div>
+
 {%endblock%}

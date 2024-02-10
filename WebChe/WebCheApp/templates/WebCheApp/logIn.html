@@ -1,0 +1,70 @@
+{% extends "WebCheApp/base.html" %}
+{% block title %}Sign in{% endblock %}
+{% block content %}
+    <style>
+        
+    .container {
+        flex-wrap: wrap;
+        margin-top: 70px;
+    }
+    .form-group {
+        display: block; 
+        margin-top: 40px;
+        margin-bottom: 40px;
+        color:#fff;
+    }
+     
+    h1{
+        color:#fff;
+    }
+    .error-message {
+        margin-top: 40px;
+    }
+    .square{
+        border-radius: 15px;
+        background-color: #242431;
+        overflow: hidden;
+        margin-top: 90px;
+        opacity: 1;
+        width: 450px;
+        height: 450px;
+    }
+    .center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; 
+        margin-top:-15px;
+    }
+    .sign-up{
+        margin-top: 20px;
+    }
+    
+    </style>
+
+    <div class="center-container">
+    <div class="square">
+    <div class="container" style="text-align: center;">
+        <form action="" method="post">
+            <h1 style="font-weight: bold;">Welcome Back</h1>
+            {% csrf_token %}
+            <div class="form-group"style="font-weight: bold;margin-top:85px;">Username: {{ form.username }}</div>
+            <div class="form-group" style="margin-left: 5px;font-weight: bold;">Password: {{ form.password }}</div>
+            <button type="submit" class="btn btn-outline-primary" style="font-weight: bold;color:#fff">Sign in</button>
+            <div class="sign-up"><a href="{% url 'Register' %}" style="text-decoration:none;margin-left:300px;"> Am new</a></div>
+            {% if form.errors %}
+                <div class="error-message">
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Errors related to:</strong> {{ form.errors }}
+                        <button type="button"
+                                class="btn-close"
+                                data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                    </div>
+                </div>
+            {% endif %}
+        </form>
+    </div>
+    </div>
+    </div>
+{% endblock %}
