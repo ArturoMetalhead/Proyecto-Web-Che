@@ -12,3 +12,18 @@ class Repository(models.Model):
         verbose_name = "Documento"
         verbose_name_plural = "Documentos"
         # ordering = ['name']
+
+class Pictures(models.Model):
+    name = models.CharField(max_length=50)
+    text = models.TextField()
+    image = models.ImageField(
+        upload_to="pictures", blank=True
+    )
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Imagen"
+        verbose_name_plural = "Imagenes"
+        # ordering = ['name']

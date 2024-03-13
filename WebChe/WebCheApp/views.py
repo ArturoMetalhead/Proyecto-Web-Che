@@ -4,9 +4,14 @@ from django.contrib.auth import login, logout, authenticate
 from django.shortcuts import redirect
 from django.contrib import messages
 from django.views import View
+from .models import Pictures
 
 def home(request):
-    return render(request, 'WebCheApp/home.html')
+    pictures = Pictures.objects.all()
+    context = {
+        "pictures": pictures,
+    }
+    return render(request, 'WebCheApp/home.html',context)
 
 def logOut(request):
     logout(request)
