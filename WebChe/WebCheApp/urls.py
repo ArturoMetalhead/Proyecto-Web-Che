@@ -8,6 +8,7 @@ urlpatterns = [
     path('register', views.registerForm.as_view(), name='Register'),
     path('logOut', views.logOut, name='LogOut'),
     path('LogIn', views.logIn, name='LogIn'),
+    path('repository', views.repository, name='Repository'),
 ]
 
 

@@ -1,0 +1,40 @@
+
+## S1 Introducción
+
+El presente informe tiene como objetivo analizar y simular el modelo de una compañía de seguros. En este modelo, se considera a los diferentes asegurados generando reclamaciones de acuerdo con una distribución común M, donde cada monto de reclamación sigue una distribución F.
+Además, se asume que los nuevos clientes se registran de acuerdo con una distribución ν, y que cada asegurado existente permanece con la compañía durante un tiempo distribuido μ. Por último, se establece que cada asegurado paga a la compañía de seguros a una tasa fija c por unidad de tiempo.
+
+El objetivo principal de este informe es analizar el tiempo de bancarrota de la compañía de seguros. Se comenzará con un número inicial de clientes n0 y un capital inicial a0≥0. A través de simulaciones, se estimará el tiempo en el cual la compañía llega a un estado de bancarrota, es decir, cuando el capital disponible es insuficiente para cubrir las reclamaciones y gastos operativos.
+
+A continuación, se presentan las principales variables que describen el problema y que serán analizadas en este informe:
+
+    n_0: Número inicial de asegurados en la compañía de seguros.
+    a_0: Capital inicial de la compañía de seguros.
+    v: Tasa de llegada de nuevos clientes a la empresa de seguros.
+    M: Distribución común que modela la generación de reclamaciones por parte de los asegurados.
+    F: Distribución que modela los montos de reclamación.
+    μ: Distribución que modela el tiempo que cada asegurado existente permanece con la compañía.
+    c: Tasa fija que los asegurados pagan a la compañía de seguros por unidad de tiempo.
+
+Estas variables son fundamentales para simular el tiempo de bancarrota y evaluar el desempeño financiero de la compañía de seguros.
+
+## S2 Detalles de Implementación
+
+Pasos seguidos para la implementación:
+
+    Definir las variables y parámetros: Es necesario identificar y definir las variables y parámetros relevantes del problema, como el número inicial de asegurados, el capital inicial, las distribuciones de reclamaciones y tiempos, la tasa de llegada de nuevos clientes y la tasa fija de pago, entre otros.
+
+    Generar las distribuciones: Utilizando las distribuciones definidas, se deben generar las reclamaciones y los tiempos de permanencia de los asegurados existentes. Esto se puede hacer utilizando funciones o métodos adecuados según la distribución elegida.
+
+    Simulación del tiempo de bancarrota: Mediante un bucle o ciclo, se realizarán iteraciones para simular el paso del tiempo y evaluar el estado financiero de la compañía en cada período. Se calculará el capital disponible en cada paso, teniendo en cuenta los ingresos generados por los asegurados existentes y los gastos en reclamaciones.
+
+    Estimación del tiempo de bancarrota: Durante la simulación, se deben monitorear los cambios en el capital disponible y determinar cuándo la compañía alcanza un estado de bancarrota. Esto puede basarse en una condición específica, como cuando el capital disponible cae por debajo de un umbral predefinido.
+
+    Recopilación de resultados: Durante la simulación, se deben recopilar los resultados relevantes, como el tiempo en el que se alcanza la bancarrota en cada iteración, el tiempo promedio de bancarrota y la desviación estándar de los tiempos de bancarrota.
+
+    Análisis de resultados: Una vez finalizada la simulación, se deben analizar los resultados obtenidos. Esto puede implicar calcular la media y la desviación estándar de los tiempos de bancarrota, realizar gráficos para visualizar la distribución de los resultados y realizar comparaciones entre diferentes escenarios o configuraciones de variables.
+
+## S3 Resultados y Experimentos
+
+
+

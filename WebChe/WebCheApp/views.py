@@ -4,7 +4,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.shortcuts import redirect
 from django.contrib import messages
 from django.views import View
-from .models import Pictures
+from .models import Pictures, Repository
 
 def home(request):
     pictures = Pictures.objects.all()
@@ -12,6 +12,13 @@ def home(request):
         "pictures": pictures,
     }
     return render(request, 'WebCheApp/home.html',context)
+
+def repository(request):
+    documents = Repository.objects.all()
+    context = {
+        "documents": documents,
+    }
+    return render(request, 'WebCheApp/repository.html',context)
 
 def logOut(request):
     logout(request)

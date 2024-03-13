@@ -1,0 +1,30 @@
+{% extends "WebCheApp/base.html" %}
+{% block title %}Repositorio{% endblock %}
+{% block content %}
+
+<!--Buscador-->
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center;margin-top: 100px;">
+    <h1 style="color: white; width: 80%;font-weight: bold;font-size:30px;margin-bottom: 50px;">Documentos</h1>
+    
+    <nav class="navbar bg-dark-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+</div>
+
+<!--Documentos-->
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center;margin-top: 100px;">
+    {%for document in documents%}
+    <ul>
+        <li>
+            <a class="nav-link" href="{{ document.url }}" target="_blank" style="color: white; width: 80%;font-weight: bold;font-size:20px;">{{document.name}}</a>
+        </li>
+    </ul>
+    {%endfor%}
+
+</div>
+{%endblock%}
