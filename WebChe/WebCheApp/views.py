@@ -14,6 +14,29 @@ def home(request):
     return render(request, 'WebCheApp/home.html',context)
 
 def repository(request):
+
+
+    if request.method == 'GET':
+        query = request.GET.get('q')
+        message=""
+        if query:
+            message="Resultados encontrados:"
+            documents = Repository.objects.filter(name=query)
+            if documents.count()==0:
+                message="No se encontraron resultados"
+                documents= Repository.objects.all()
+        else:
+            documents = Repository.objects.all()
+        
+        context = {
+            'documents': documents,
+            'query': query,
+            'message': message,
+        }
+        
+        return render(request, 'WebCheApp/repository.html', context)
+
+    ####
     documents = Repository.objects.all()
     context = {
         "documents": documents,
