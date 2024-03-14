@@ -21,7 +21,7 @@
     {%for document in documents%}
     <ul>
         <li>
-            <a class="nav-link" href="{{ document.url }}" target="_blank" style="color: white; width: 80%;font-weight: bold;font-size:20px;">{{document.name}}</a>
+            <a class="nav-link" href="{{ document.docfile.url }}" target="_blank" style="color: white; width: 80%;font-weight: bold;font-size:20px;">{{document.name}}</a>
         </li>
     </ul>
     {%endfor%}
